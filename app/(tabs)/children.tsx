@@ -1,1 +1,1 @@
-export { default } from '../src/screens/ChildrenScreen';
+export { default } from '../../src/screens/ChildrenScreen';

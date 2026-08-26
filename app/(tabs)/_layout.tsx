@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
-import { View } from 'react-native';
-import { COLORS } from '../src/constants/theme';
+import { View, Text } from 'react-native';
+import { COLORS } from '../../src/constants/theme';
 
 export default function TabsLayout() {
   return (
@@ -47,5 +47,3 @@ export default function TabsLayout() {
     </Tabs>
   );
 }
-
-import { Text } from 'react-native';

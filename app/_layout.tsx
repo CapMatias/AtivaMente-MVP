@@ -1,6 +1,6 @@
-import { Stack, Tabs } from 'expo-router';
-import { View } from 'react-native';
-import { COLORS } from './src/constants/theme';
+import { Stack } from 'expo-router';
+import '../global.css';
+import { COLORS } from '../src/constants/theme';
 
 export default function Layout() {
   return (
@@ -11,6 +11,9 @@ export default function Layout() {
       <Stack.Screen name="signup" />
       <Stack.Screen name="forgot-password" />
       <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="child/[id]" />
+      <Stack.Screen name="evolutions" />
+      <Stack.Screen name="notifications" />
     </Stack>
   );
 }

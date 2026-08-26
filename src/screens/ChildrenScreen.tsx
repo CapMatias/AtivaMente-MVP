@@ -12,12 +12,13 @@ export default function ChildrenScreen() {
   return (
     <View className="flex-1 bg-slate-50">
       <Header title="Meus Filhos" />
-      
+
       <ScrollView className="flex-1 px-6 py-4">
-        {MOCK_DATA.children.map((child) => (
-          <Card 
-            key={child.id} 
-            className="mb-4" 
+        {MOCK_DATA.children.map((child, index) => (
+          <Card
+            key={child.id}
+            className="mb-4 animate-fade-in-up opacity-0"
+            style={{ animationDelay: `${index * 0.15}s` }}
             onPress={() => router.push(`/child/${child.id}`)}
           >
             <View className="flex-row items-center">

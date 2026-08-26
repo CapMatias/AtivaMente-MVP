@@ -5,7 +5,7 @@ import { COLORS } from '../../constants/theme';
 interface InputProps {
   label?: string;
   placeholder: string;
-  value: string;
+  value?: string;
   onChangeText: (text: string) => void;
   secureTextEntry?: boolean;
   error?: string;
@@ -17,7 +17,7 @@ export const Input = ({ label, placeholder, value, onChangeText, secureTextEntry
     <View className={`mb-4 ${className}`}>
       {label && <Text className="text-slate-600 mb-2 font-medium">{label}</Text>}
       <TextInput
-        value={value}
+        value={value ?? ''}
         onChangeText={onChangeText}
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}

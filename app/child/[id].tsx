@@ -1,1 +1,1 @@
-export { default } from '../src/screens/ChildProfileScreen';
+export { default } from '../../src/screens/ChildProfileScreen';
