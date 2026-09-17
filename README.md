@@ -36,6 +36,8 @@ celular). Foram feitas pela versão web (`npm run web`), que executa o mesmo
 código React Native através do react-native-web — por isso aparece a barra de
 rolagem do navegador em algumas telas.</sub>
 
+<sub>Figura 5. Telas do app dos responsáveis. Fonte: elaborado pelos autores (2026).</sub>
+
 ### O painel da clínica
 
 <table>
@@ -58,6 +60,8 @@ rolagem do navegador em algumas telas.</sub>
 backend, as páginas foram montadas por um harness que fornece o atributo
 <code>data-page</code> diretamente — o suficiente para renderizar cada tela com
 os dados de demonstração.</sub>
+
+<sub>Figura 6. Telas do painel da clínica. Fonte: elaborado pelos autores (2026).</sub>
 
 ---
 
@@ -110,6 +114,247 @@ interface funcionando (filtros, abas, modais, formulários com validação), mas
 Isso é deliberado: a camada de dados foi desenhada para ser substituída sem
 reescrever as telas. Cada página recebe seus dados como propriedades e só cai
 nos dados de demonstração quando o servidor ainda não os envia.
+
+---
+
+## Protótipo e validação com usuários
+
+Esta parte corresponde à Seção 9 do documento do projeto. Está aqui no README,
+e não em arquivo separado, para que quem abrir o repositório encontre junto o
+protótipo e o que foi feito com ele.
+
+Duas advertências de método, antes de tudo:
+
+- **9.1 e 9.3 são artefatos de projeto.** O protótipo existe e roda; o roteiro
+  de tarefas é escrito *antes* do teste. Os dois estão completos abaixo.
+- **9.2, 9.4 e 9.5 são registro de observação.** Só existem depois que pessoas
+  reais sentarem na frente do protótipo. Estão estruturados, com os campos e as
+  instruções, mas **em branco** — preencher antes de testar seria fabricar dado
+  de pesquisa.
+
+### 9.1 O protótipo
+
+O protótipo é **navegável e executável**: não são telas estáticas montadas em
+ferramenta de design, mas o MVP de frontend rodando de verdade. A pessoa
+percorre a tarefa inteira tocando na interface — abas trocam, filtros filtram,
+modais abrem, formulários validam campo por campo. O que não existe por trás é
+servidor: os dados vêm de arquivos de demonstração e nada é gravado.
+
+Para o teste de usabilidade essa distinção pesa pouco, e a favor: o participante
+não percebe que o dado é simulado, então o comportamento dele é o mesmo que
+seria no sistema pronto. O que ele não pode fazer é voltar no dia seguinte e
+encontrar o que digitou.
+
+As telas estão logo acima, na seção **As telas**: a Figura 5 traz as 12 telas
+do app dos responsáveis e a Figura 6, as 8 telas do painel da clínica.
+
+#### O caminho que o protótipo cobre
+
+**Responsável (Figura 5).** Abrir o app → passar pelo onboarding → entrar com
+e-mail e senha → chegar ao início e ver a próxima sessão do filho → abrir a
+lista de filhos → entrar no perfil da criança → ler a última evolução escrita
+pelo terapeuta → conferir a agenda da semana → solicitar um novo agendamento →
+ver as notificações → editar o próprio perfil. Também estão montadas as telas
+de cadastro e de recuperação de senha. São 12 telas ao todo.
+
+**Clínica (Figura 6).** Entrar no painel → ver o dashboard com os indicadores
+do mês → abrir a lista de crianças, filtrando por terapia ou por status →
+cadastrar uma criança nova → abrir o prontuário de uma criança já cadastrada →
+registrar uma evolução da sessão → conferir a grade semanal de horários →
+ajustar dados da clínica e da equipe nas configurações. São 8 telas.
+
+#### O que ficou de fora
+
+Fora do protótipo, e portanto fora do que pode ser testado:
+
+- **Persistência.** Nada do que o participante digitar é gravado. Ele consegue
+  preencher o formulário inteiro e submeter, mas o registro não aparece na
+  lista depois. Isso precisa estar previsto no roteiro (ver 9.3) para não ser
+  confundido com erro do participante.
+- **Autenticação real.** As telas de login validam formato de e-mail e tamanho
+  de senha, mas qualquer combinação válida entra. Não há sessão, nem perfis de
+  permissão distintos entre coordenação e terapeuta.
+- **Notificação push.** Existe a tela que lista notificações; não existe o
+  aviso chegando no celular.
+- **Pagamentos, mensalidades e emissão de relatório em PDF.** Aparecem como
+  texto nos dados de demonstração, mas não têm tela. Se o participante procurar
+  por isso, é achado relevante — anote em 9.4 e não improvise uma resposta.
+- **Conversa direta entre família e terapeuta** e **anexo de foto ou vídeo da
+  sessão.** Não existem.
+- **Integração entre as duas pontas.** O app e o painel ainda não compartilham
+  dados: uma evolução registrada no painel não aparece no app. Cada um roda com
+  seu próprio arquivo de demonstração.
+
+### 9.2 O que foi testado e com quem
+
+| Campo | Preenchimento |
+| --- | --- |
+| Objeto do teste | **MVP de frontend navegável** — protótipo executável, sem backend, com dados de demonstração |
+| Número de rodadas | *(preencher — ver recomendação abaixo)* |
+| Participantes por rodada | *(preencher)* |
+| Perfil dos participantes | *(preencher — ver abaixo)* |
+| Datas e local | *(preencher)* |
+
+**Recomendação de desenho.** Duas rodadas de 5 participantes, com correção
+entre elas. A orientação da disciplina é explícita nesse ponto e ela tem razão:
+duas rodadas curtas rendem mais que uma longa, porque a rodada 2 mede se a
+correção funcionou — e é isso que preenche a coluna "Rodada" da tabela 9.5.
+
+**Perfil que precisa ser respeitado.** São dois públicos distintos, e não dá
+para cobrir os dois com as mesmas pessoas:
+
+- **App:** pai, mãe ou responsável por criança em terapia. O que importa aqui
+  não é idade nem escolaridade, é a situação: quem já vive a rotina de levar
+  filho a sessão e hoje descobre como foi por WhatsApp ou bilhete.
+- **Painel:** coordenação ou terapeuta de clínica (fonoaudiologia, psicologia,
+  terapia ocupacional, fisioterapia). Quem já registra evolução em algum lugar,
+  nem que seja em papel.
+
+> **Atenção ao erro mais comum.** Testar com colega de turma não conta como
+> validação, e essa é a observação que mais derruba esta seção. Quem acompanhou
+> o projeto sendo construído não erra onde o usuário real erra — já sabe onde
+> fica o botão. Se não houver como chegar ao público final, teste com alguém do
+> mesmo perfil (um responsável de fora do curso, um profissional da área) e
+> **registre a limitação na Seção 11.2**. Limitação declarada é honestidade
+> metodológica; limitação escondida é o que a banca encontra.
+
+### 9.3 Roteiro de tarefas
+
+#### Antes de começar: o que dizer
+
+Leia isto para o participante, sem acrescentar nada:
+
+> "Este é um aplicativo em construção para uma clínica de terapias infantis. Eu
+> vou pedir algumas coisas para você fazer nele. Não é você que está sendo
+> testado, é o aplicativo — se travar em algum ponto, o problema é nosso.
+> Pode falar em voz alta o que estiver pensando. Alguns dados aqui são de
+> exemplo, então nada do que você digitar vai ficar salvo de verdade."
+
+Essa última frase precisa ser dita, senão a pessoa cadastra uma criança, não a
+vê aparecer na lista e vai achar que errou. Mas ela é dita **uma vez, no
+começo** — não repetida no meio da tarefa como socorro.
+
+#### Durante: o que não fazer
+
+Não ajude, não explique, não corrija. Se a pessoa travar, espere. O silêncio é
+dado, e o impulso de socorrer é o que mais estraga teste de usabilidade feito
+por quem construiu o sistema.
+
+Se ela perguntar "é aqui?", devolva a pergunta: *"o que você acha?"*. Se
+perguntar "o que é isso?", devolva: *"o que você imagina que seja?"*. Só
+interrompa se passar de 3 minutos travada — e aí anote como **não concluiu**,
+não como "concluiu com ajuda".
+
+#### Roteiro A — Responsável (app)
+
+| # | Tarefa | Concluiu sozinho? | Tempo | Onde travou |
+| --- | --- | --- | --- | --- |
+| A1 | "A clínica te cadastrou e mandou seus dados de acesso. Entre no aplicativo." | sim / com ajuda / não | | |
+| A2 | "Descubra em que dia e que horas é a próxima sessão do Lucas." | sim / com ajuda / não | | |
+| A3 | "A terapeuta escreveu sobre a última sessão do Lucas. Leia o que ela escreveu." | sim / com ajuda / não | | |
+| A4 | "Você não vai poder levar o Lucas no horário marcado. Peça outro horário para a clínica." | sim / com ajuda / não | | |
+| A5 | "Seu telefone mudou. Deixe o número novo cadastrado." | sim / com ajuda / não | | |
+
+**O que observar em cada uma:**
+
+- **A2** — o caminho curto é a própria tela de início, que já mostra a próxima
+  sessão. Se a pessoa for direto para a aba Agenda, não é erro, mas indica que
+  o cartão do início não está sendo lido como resposta.
+- **A3** — o caminho previsto passa por *Meus filhos* → perfil da criança →
+  evoluções. Existe também a aba Evoluções, que lista tudo. Qual dos dois a
+  pessoa escolhe diz onde ela espera encontrar informação sobre o filho: por
+  criança ou por ordem de data.
+- **A4** — é a tarefa mais provável de travar, porque envolve encontrar a ação
+  dentro da agenda. Anote com precisão *onde* o olho dela procurou primeiro.
+- **A5** — verifica se "Perfil" é entendido como o perfil do responsável e não
+  o da criança. A ambiguidade entre os dois perfis é um risco real desta
+  interface.
+
+#### Roteiro B — Clínica (painel)
+
+| # | Tarefa | Concluiu sozinho? | Tempo | Onde travou |
+| --- | --- | --- | --- | --- |
+| B1 | "Entre no painel da clínica." | sim / com ajuda / não | | |
+| B2 | "Registre o atendimento que a senhora fez hoje de manhã com a Sofia." | sim / com ajuda / não | | |
+| B3 | "Começou uma criança nova na clínica hoje. Deixe ela cadastrada." | sim / com ajuda / não | | |
+| B4 | "Descubra quantas sessões a clínica teve este mês e quantas faltaram." | sim / com ajuda / não | | |
+| B5 | "Veja quem está atendendo na quarta-feira às 14h." | sim / com ajuda / não | | |
+
+**O que observar em cada uma:**
+
+- **B2** — é a tarefa central do painel e vale começar por ela. Há dois
+  caminhos possíveis: pela tela de Evoluções ou pelo prontuário da criança.
+  Anote qual a pessoa tentou primeiro; isso decide onde a ação principal
+  deveria estar.
+- **B3** — o formulário de cadastro é longo. Observe se ela hesita em algum
+  campo, se pergunta se algo é obrigatório, e que vocabulário usa para os
+  campos (o termo que ela fala é o rótulo que a tela deveria ter).
+- **B4** — o dashboard responde isso em números grandes no topo. Se a pessoa
+  não achar, o problema é de hierarquia visual, não de navegação.
+- **B5** — testa se a grade semanal é legível. Anote se ela lê a grade por
+  coluna (dia) ou por linha (horário).
+
+**Vocabulário.** Em todas as tarefas, anote as palavras que o participante usa
+espontaneamente: "evolução", "relatório", "anotação", "prontuário", "ficha".
+Se o rótulo da tela não é a palavra que a pessoa usa, o rótulo está errado —
+e essa é uma das correções mais baratas que existem.
+
+### 9.4 O que foi observado
+
+*(Preencher depois de cada rodada. Uma subseção por rodada.)*
+
+Descreva o que aconteceu: onde as pessoas hesitaram, o que interpretaram de
+outro jeito, que vocabulário usaram para nomear as coisas, o que pediram que
+não existia.
+
+Registre também **o que funcionou sem atrito**. Essa parte costuma ser omitida e
+faz falta: ela protege decisões que a equipe poderia desfazer sem necessidade
+porque uma pessoa reclamou e ninguém anotou que as outras quatro passaram
+direto.
+
+Um roteiro do que descrever, para não virar lista de opiniões:
+
+1. **Onde parou.** Em que tela, procurando o quê, por quanto tempo.
+2. **O que tentou antes de acertar.** O caminho errado é mais informativo que o
+   certo.
+3. **Que palavra usou.** "Vou ver o relatório dela" quando a tela diz
+   "Evoluções" é um achado, não um detalhe.
+4. **O que procurou e não existia.** Especialmente pagamento, falta, anexo de
+   foto — coisas que estão fora do protótipo de propósito.
+5. **O que passou liso.** Nomeie a tela e a tarefa.
+
+**Rodada 1 —** *(escrever aqui)*
+
+**Rodada 2 —** *(escrever aqui)*
+
+### 9.5 O que mudou no projeto
+
+Esta é a tabela que transforma teste em iteração. Cada problema observado gera
+uma decisão, e a decisão aparece em algum lugar do sistema.
+
+Se um problema foi observado e **não** corrigido, registre assim mesmo, com o
+motivo. Problema conhecido e adiado é decisão de projeto; problema omitido é
+omissão.
+
+| Problema observado | Decisão tomada | Onde foi alterado | Rodada |
+| --- | --- | --- | --- |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+
+**Como preencher a coluna "Onde foi alterado".** Este projeto tem uma vantagem
+que um protótipo de Figma não tem: a alteração fica registrada em commit. Vale
+citar o arquivo e o commit — por exemplo, *"`src/screens/AgendaScreen.tsx`,
+commit `a1b2c3d`"*. Isso liga a Seção 9 ao código e é verificável por quem
+avaliar.
+
+> **Se a tabela sair vazia, o problema é o teste, não o protótipo.** Teste que
+> não produziu nenhuma mudança costuma indicar uma de duas coisas: o roteiro
+> pediu opinião em vez de tarefa, ou alguém da equipe ajudou durante a
+> execução. Nos dois casos, vale refazer uma rodada curta antes de escrever
+> esta seção.
 
 ---
 
