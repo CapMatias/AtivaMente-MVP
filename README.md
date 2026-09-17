@@ -12,6 +12,30 @@ O AtivaMente centraliza isso em dois produtos que conversam entre si.
 
 ---
 
+## As telas
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/01-onboarding.png" width="190"><br><sub><b>Onboarding</b></sub></td>
+    <td align="center"><img src="docs/screenshots/02-login.png" width="190"><br><sub><b>Login</b></sub></td>
+    <td align="center"><img src="docs/screenshots/03-home.png" width="190"><br><sub><b>Início</b></sub></td>
+    <td align="center"><img src="docs/screenshots/04-filhos.png" width="190"><br><sub><b>Meus filhos</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/05-perfil-crianca.png" width="190"><br><sub><b>Perfil da criança</b></sub></td>
+    <td align="center"><img src="docs/screenshots/06-agenda.png" width="190"><br><sub><b>Agenda</b></sub></td>
+    <td align="center"><img src="docs/screenshots/07-evolucoes.png" width="190"><br><sub><b>Evoluções</b></sub></td>
+    <td align="center"><img src="docs/screenshots/08-perfil.png" width="190"><br><sub><b>Perfil</b></sub></td>
+  </tr>
+</table>
+
+<sub>Capturas do app rodando de verdade, em viewport de 390&times;844 (tamanho de
+celular). Foram feitas pela versão web (`npm run web`), que executa o mesmo
+código React Native através do react-native-web — por isso aparece a barra de
+rolagem do navegador em algumas telas.</sub>
+
+---
+
 ## As duas partes
 
 ### 1. App dos responsáveis (React Native / Expo)
