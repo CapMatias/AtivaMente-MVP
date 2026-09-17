@@ -467,8 +467,33 @@ Se a ideia é avaliar o código, esta é a ordem que faz mais sentido:
 
 O painel administrativo nasceu como protótipo no Figma Make (React + Tailwind) e
 foi portado para Vue 3 + Inertia seguindo as convenções de um ERP em Laravel
-desenvolvido em equipe, onde ele está sendo integrado. O histórico de commits
-deste repositório registra esse processo.
+desenvolvido pela equipe. O histórico de commits deste repositório registra esse
+processo.
+
+### A integração com o ERP da equipe
+
+O painel não vive só aqui. Ele foi entregue como pull request ao repositório do
+ERP (privado, por isso sem link), na branch `feat/painel-admin`, e o código
+daqui foi adaptado às convenções de lá em vez do contrário:
+
+- **TypeScript convertido para JavaScript**, com `defineProps` em tempo de
+  execução e tipos documentados por JSDoc, que é o padrão do projeto deles;
+- **Tailwind v4 adaptado para o v3** que o ERP usa, trocando a configuração por
+  CSS (`@theme`) pelo `tailwind.config.js`;
+- **validação passada para o lado do servidor**, usando `useForm` do Inertia com
+  as regras do Laravel, no lugar do Zod.
+
+A entrega foi desenhada para não tocar em nada que já existia. As rotas ficaram
+isoladas em um `routes/admin.php` novo, e ativá-las é uma linha só
+(`require __DIR__.'/admin.php';`). O único arquivo compartilhado que precisou
+mudar foi o `tailwind.config.js`, que varria apenas `*.vue` e por isso não
+gerava as classes de cor definidas em `constants/adminTokens.js` — os avatares e
+as etiquetas de especialidade saíam sem cor. Foi acrescentado um glob para
+`*.js`.
+
+A divisão de trabalho é essa: o frontend é responsabilidade deste repositório,
+o backend e o banco ficam com os outros integrantes da equipe. O app dos
+responsáveis é etapa seguinte, para quando as duas pontas forem ligadas.
 
 ## Licença
 
