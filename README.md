@@ -14,6 +14,8 @@ O AtivaMente centraliza isso em dois produtos que conversam entre si.
 
 ## As telas
 
+### O app dos responsáveis
+
 <table>
   <tr>
     <td align="center"><img src="docs/screenshots/01-onboarding.png" width="190"><br><sub><b>Onboarding</b></sub></td>
@@ -33,6 +35,29 @@ O AtivaMente centraliza isso em dois produtos que conversam entre si.
 celular). Foram feitas pela versão web (`npm run web`), que executa o mesmo
 código React Native através do react-native-web — por isso aparece a barra de
 rolagem do navegador em algumas telas.</sub>
+
+### O painel da clínica
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/painel/06-login.png" width="290"><br><sub><b>Login</b></sub></td>
+    <td align="center"><img src="docs/screenshots/painel/01-dashboard.png" width="290"><br><sub><b>Dashboard</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/painel/02-criancas.png" width="290"><br><sub><b>Crianças</b></sub></td>
+    <td align="center"><img src="docs/screenshots/painel/03-agenda.png" width="290"><br><sub><b>Agenda</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/painel/04-evolucoes.png" width="290"><br><sub><b>Evoluções</b></sub></td>
+    <td align="center"><img src="docs/screenshots/painel/05-configuracoes.png" width="290"><br><sub><b>Configurações</b></sub></td>
+  </tr>
+</table>
+
+<sub>Capturas dos componentes Vue deste repositório rodando em viewport de
+1280&times;800, e não do protótipo do Figma. Como o Inertia precisa de um
+backend, as páginas foram montadas por um harness que fornece o atributo
+<code>data-page</code> diretamente — o suficiente para renderizar cada tela com
+os dados de demonstração.</sub>
 
 ---
 
