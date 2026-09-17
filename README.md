@@ -10,6 +10,8 @@ não existe um lugar único onde a família acompanhe o desenvolvimento do filho
 
 O AtivaMente centraliza isso em dois produtos que conversam entre si.
 
+**Repositório:** <https://github.com/CapMatias/AtivaMente-MVP>
+
 ---
 
 ## As telas
@@ -363,6 +365,8 @@ avaliar.
 Você precisa de **Node.js 18 ou superior**.
 
 ```bash
+git clone https://github.com/CapMatias/AtivaMente-MVP.git
+cd AtivaMente-MVP
 npm install
 npm start
 ```
