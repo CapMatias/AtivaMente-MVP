@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
-import { Brain, Calendar, FileText, LayoutDashboard, LogOut, Settings, Users, X } from 'lucide-vue-next';
+import { Calendar, FileText, LayoutDashboard, LogOut, Settings, Users, X } from 'lucide-vue-next';
 import InitialsAvatar from './InitialsAvatar.vue';
 import { ADMIN_ROUTES } from '../../services/routes';
+import logo from '../../../images/logo.svg';
 import { ADMIN_USER, CLINIC } from '../../services/adminMockData';
 
 const open = defineModel<boolean>('open', { default: false });
@@ -34,9 +35,7 @@ function isActive(href: string, exact: boolean) {
   >
     <div class="px-5 py-5 border-b border-slate-100 flex items-center justify-between">
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 bg-[#2563EB] rounded-xl flex items-center justify-center shadow-sm">
-          <Brain :size="17" class="text-white" />
-        </div>
+        <img :src="logo" alt="" class="w-10 h-10 object-contain" />
         <div>
           <span class="text-base font-bold text-slate-800 tracking-tight">AtivaMente</span>
           <p class="text-[10px] text-slate-400 leading-none mt-0.5">{{ CLINIC.name }}</p>

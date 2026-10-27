@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Head, router } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
-import PrimaryButton from '../Components/ui/PrimaryButton.vue';
-import { ROUTES } from '../services/routes';
+import PrimaryButton from '../../Components/ui/PrimaryButton.vue';
+import { ROUTES } from '../../services/routes';
 
 const ONBOARDING_STEPS = [
   {

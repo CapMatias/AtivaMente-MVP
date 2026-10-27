@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
-import AppLayout from '../Layouts/AppLayout.vue';
-import Avatar from '../Components/ui/Avatar.vue';
-import EmptyState from '../Components/ui/EmptyState.vue';
-import Header from '../Components/ui/Header.vue';
-import Timeline from '../Components/ui/Timeline.vue';
-import { MOCK_DATA } from '../services/mockData';
-import type { Child, Evolution, TimelineItem } from '../types';
+import AppLayout from '../../Layouts/AppLayout.vue';
+import Avatar from '../../Components/ui/Avatar.vue';
+import EmptyState from '../../Components/ui/EmptyState.vue';
+import Header from '../../Components/ui/Header.vue';
+import Timeline from '../../Components/ui/Timeline.vue';
+import { MOCK_DATA } from '../../services/mockData';
+import type { Child, Evolution, TimelineItem } from '../../types';
 
 defineOptions({ layout: AppLayout });
 

@@ -2,20 +2,20 @@
 import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import * as z from 'zod';
-import AppLayout from '../Layouts/AppLayout.vue';
-import Card from '../Components/ui/Card.vue';
-import Header from '../Components/ui/Header.vue';
-import Input from '../Components/ui/Input.vue';
-import Modal from '../Components/ui/Modal.vue';
-import PrimaryButton from '../Components/ui/PrimaryButton.vue';
-import Toast from '../Components/ui/Toast.vue';
-import { useToast } from '../composables/useToast';
-import { useZodForm } from '../composables/useZodForm';
-import { AuthService } from '../services/api';
-import { MOCK_DATA } from '../services/mockData';
-import { ROUTES } from '../services/routes';
-import { useAuthStore } from '../stores/auth';
-import type { User } from '../types';
+import AppLayout from '../../Layouts/AppLayout.vue';
+import Card from '../../Components/ui/Card.vue';
+import Header from '../../Components/ui/Header.vue';
+import Input from '../../Components/ui/Input.vue';
+import Modal from '../../Components/ui/Modal.vue';
+import PrimaryButton from '../../Components/ui/PrimaryButton.vue';
+import Toast from '../../Components/ui/Toast.vue';
+import { useToast } from '../../composables/useToast';
+import { useZodForm } from '../../composables/useZodForm';
+import { AuthService } from '../../services/api';
+import { MOCK_DATA } from '../../services/mockData';
+import { ROUTES } from '../../services/routes';
+import { useAuthStore } from '../../stores/auth';
+import type { User } from '../../types';
 
 defineOptions({ layout: AppLayout });
 

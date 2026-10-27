@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { Head, router } from '@inertiajs/vue3';
-import AppLayout from '../../Layouts/AppLayout.vue';
-import Avatar from '../../Components/ui/Avatar.vue';
-import Card from '../../Components/ui/Card.vue';
-import EmptyState from '../../Components/ui/EmptyState.vue';
-import Header from '../../Components/ui/Header.vue';
-import { MOCK_DATA } from '../../services/mockData';
-import { ROUTES } from '../../services/routes';
-import type { Child } from '../../types';
+import AppLayout from '../../../Layouts/AppLayout.vue';
+import Avatar from '../../../Components/ui/Avatar.vue';
+import Card from '../../../Components/ui/Card.vue';
+import EmptyState from '../../../Components/ui/EmptyState.vue';
+import Header from '../../../Components/ui/Header.vue';
+import { MOCK_DATA } from '../../../services/mockData';
+import { ROUTES } from '../../../services/routes';
+import type { Child } from '../../../types';
 
 defineOptions({ layout: AppLayout });
 

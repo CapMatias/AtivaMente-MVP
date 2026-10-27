@@ -25,13 +25,15 @@ os mesmos mocks que as telas React Native usavam.
 resources/
   css/app.css                  Tailwind v4 (porte do tailwind.config.js do NativeWind)
   views/app.blade.php          documento raiz (@inertia / @inertiaHead)
+  images/logo.svg              logo (Splash, login e sidebar do painel)
   js/
     app.ts                     createInertiaApp + Pinia
     ssr.ts                     entrada de SSR (opcional)
     Layouts/
       AppLayout.vue            ex-`app/(tabs)/_layout.tsx` (tab bar inferior)
       AuthLayout.vue           telas de login/cadastro/recuperação
-    Pages/                     uma página por rota (ver tabela abaixo)
+    Pages/Parents/             acesso dos pais — uma página por rota (ver tabela abaixo)
+    Pages/Admin/               painel da clínica
     Components/ui/             ex-`src/components/ui/`
     composables/
       useMergedClass.ts        `cn()` + fallthrough de `class` (ex-`className`)
@@ -50,18 +52,18 @@ tsconfig.web.json              tsconfig do frontend web (o da raiz é do Expo)
 
 | React Native (`src/screens`)  | Rota                | Página Vue                     |
 | ----------------------------- | ------------------- | ------------------------------ |
-| `SplashScreen`                | `/`                 | `Pages/Splash.vue`             |
-| `OnboardingScreen`            | `/onboarding`       | `Pages/Onboarding.vue`         |
-| `LoginScreen`                 | `/login`            | `Pages/Auth/Login.vue`         |
-| `SignupScreen`                | `/signup`           | `Pages/Auth/Signup.vue`        |
-| `ForgotPasswordScreen`        | `/forgot-password`  | `Pages/Auth/ForgotPassword.vue`|
-| `HomeScreen`                  | `/home`             | `Pages/Home.vue`               |
-| `ChildrenScreen`              | `/children`         | `Pages/Children/Index.vue`     |
-| `ChildProfileScreen`          | `/children/{id}`    | `Pages/Children/Show.vue`      |
-| `AgendaScreen`                | `/agenda`           | `Pages/Agenda.vue`             |
-| `EvolutionsScreen`            | `/evolutions`       | `Pages/Evolutions.vue`         |
-| `NotificationsScreen`         | `/notifications`    | `Pages/Notifications.vue`      |
-| `ProfileScreen`               | `/profile`          | `Pages/Profile.vue`            |
+| `SplashScreen`                | `/`                 | `Pages/Parents/Splash.vue`             |
+| `OnboardingScreen`            | `/onboarding`       | `Pages/Parents/Onboarding.vue`         |
+| `LoginScreen`                 | `/login`            | `Pages/Parents/Auth/Login.vue`         |
+| `SignupScreen`                | `/signup`           | `Pages/Parents/Auth/Signup.vue`        |
+| `ForgotPasswordScreen`        | `/forgot-password`  | `Pages/Parents/Auth/ForgotPassword.vue`|
+| `HomeScreen`                  | `/home`             | `Pages/Parents/Home.vue`               |
+| `ChildrenScreen`              | `/children`         | `Pages/Parents/Children/Index.vue`     |
+| `ChildProfileScreen`          | `/children/{id}`    | `Pages/Parents/Children/Show.vue`      |
+| `AgendaScreen`                | `/agenda`           | `Pages/Parents/Agenda.vue`             |
+| `EvolutionsScreen`            | `/evolutions`       | `Pages/Parents/Evolutions.vue`         |
+| `NotificationsScreen`         | `/notifications`    | `Pages/Parents/Notifications.vue`      |
+| `ProfileScreen`               | `/profile`          | `Pages/Parents/Profile.vue`            |
 
 ## Equivalências aplicadas
 

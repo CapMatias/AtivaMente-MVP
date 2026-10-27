@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
-import AppLayout from '../Layouts/AppLayout.vue';
-import Badge from '../Components/ui/Badge.vue';
-import BottomSheet from '../Components/ui/BottomSheet.vue';
-import Calendar from '../Components/ui/Calendar.vue';
-import Card from '../Components/ui/Card.vue';
-import Header from '../Components/ui/Header.vue';
-import Toast from '../Components/ui/Toast.vue';
-import { useToast } from '../composables/useToast';
-import { SessionService } from '../services/api';
-import { MOCK_DATA } from '../services/mockData';
-import type { Child, Session } from '../types';
+import AppLayout from '../../Layouts/AppLayout.vue';
+import Badge from '../../Components/ui/Badge.vue';
+import BottomSheet from '../../Components/ui/BottomSheet.vue';
+import Calendar from '../../Components/ui/Calendar.vue';
+import Card from '../../Components/ui/Card.vue';
+import Header from '../../Components/ui/Header.vue';
+import Toast from '../../Components/ui/Toast.vue';
+import { useToast } from '../../composables/useToast';
+import { SessionService } from '../../services/api';
+import { MOCK_DATA } from '../../services/mockData';
+import type { Child, Session } from '../../types';
 
 defineOptions({ layout: AppLayout });
 

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Head, router } from '@inertiajs/vue3';
-import AppLayout from '../Layouts/AppLayout.vue';
-import EmptyState from '../Components/ui/EmptyState.vue';
-import Header from '../Components/ui/Header.vue';
-import NotificationCard from '../Components/ui/NotificationCard.vue';
-import { MOCK_DATA } from '../services/mockData';
-import { ROUTES } from '../services/routes';
-import type { Notification } from '../types';
+import AppLayout from '../../Layouts/AppLayout.vue';
+import EmptyState from '../../Components/ui/EmptyState.vue';
+import Header from '../../Components/ui/Header.vue';
+import NotificationCard from '../../Components/ui/NotificationCard.vue';
+import { MOCK_DATA } from '../../services/mockData';
+import { ROUTES } from '../../services/routes';
+import type { Notification } from '../../types';
 
 defineOptions({ layout: AppLayout });
 

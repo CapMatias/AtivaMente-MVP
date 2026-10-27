@@ -91,8 +91,10 @@ São 8 telas, portadas de um protótipo feito no Figma Make.
 
 O app dos responsáveis também foi portado para a web (Vue 3 + Inertia), para
 que as duas partes compartilhem a mesma base de código no navegador. Por isso
-`resources/js/Pages/` tem 20 páginas: 12 são a versão web do app dos
-responsáveis e 8 são o painel da clínica, sob `Pages/Admin/`.
+`resources/js/Pages/` tem duas pastas, uma para cada público:
+
+- **`Pages/Parents/`** — as 12 páginas do acesso dos pais (versão web do app);
+- **`Pages/Admin/`** — as 8 telas do painel da clínica.
 
 Quem for avaliar o app dos responsáveis deve olhar a versão React Native em
 `src/` — é ela que roda com `npm start`.
@@ -421,6 +423,8 @@ app/                      rotas do app (expo-router) — cada arquivo só
 ├── (tabs)/_layout.tsx    barra de abas inferior
 └── ...
 
+assets/images/            logo e ícones do app (ícone, splash, favicon)
+
 src/                      o código do app dos responsáveis
 ├── screens/              as 12 telas
 ├── components/ui/        botões, card, input, modal, calendário, timeline...
@@ -432,8 +436,9 @@ src/                      o código do app dos responsáveis
 └── types/index.ts        tipos do domínio (User, Child, Session, Evolution)
 
 resources/                versão web em Vue 3 + Inertia
-├── js/Pages/             12 páginas do app dos responsáveis...
-├── js/Pages/Admin/       ...e as 8 telas do painel da clínica
+├── js/Pages/Parents/     acesso dos pais: 12 páginas (versão web do app)
+├── js/Pages/Admin/       painel da clínica: 8 telas
+├── images/logo.svg       logo usada nas telas web
 ├── js/Components/ui/     componentes da versão web do app
 ├── js/Components/admin/  componentes do painel + gráficos SVG
 ├── js/Layouts/           sidebar, header e navegação

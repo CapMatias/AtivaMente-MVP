@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import { computed } from 'vue';
-import AppLayout from '../Layouts/AppLayout.vue';
-import Avatar from '../Components/ui/Avatar.vue';
-import Badge from '../Components/ui/Badge.vue';
-import Card from '../Components/ui/Card.vue';
-import Header from '../Components/ui/Header.vue';
-import { MOCK_DATA } from '../services/mockData';
-import { ROUTES } from '../services/routes';
-import type { Child, Evolution, Session, User } from '../types';
+import AppLayout from '../../Layouts/AppLayout.vue';
+import Avatar from '../../Components/ui/Avatar.vue';
+import Badge from '../../Components/ui/Badge.vue';
+import Card from '../../Components/ui/Card.vue';
+import Header from '../../Components/ui/Header.vue';
+import { MOCK_DATA } from '../../services/mockData';
+import { ROUTES } from '../../services/routes';
+import type { Child, Evolution, Session, User } from '../../types';
 
 defineOptions({ layout: AppLayout });
 

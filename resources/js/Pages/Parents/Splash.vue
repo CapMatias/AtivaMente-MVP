@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { Head, router } from '@inertiajs/vue3';
 import { onBeforeUnmount, onMounted } from 'vue';
-import { ROUTES } from '../services/routes';
+import { ROUTES } from '../../services/routes';
+import logo from '../../../images/logo.svg';
 
 /** Equivalente ao `SplashScreen`: após 3s segue para o onboarding. */
 let timer: ReturnType<typeof setTimeout>;
@@ -20,9 +21,7 @@ onBeforeUnmount(() => clearTimeout(timer));
 
   <div class="min-h-dvh bg-white flex flex-col justify-center items-center">
     <div class="flex flex-col items-center animate-bounce-in opacity-0">
-      <div class="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center mb-4 shadow-lg">
-        <span class="text-white text-4xl font-bold">A</span>
-      </div>
+      <img :src="logo" alt="Logo do AtivaMente" class="w-28 h-28 mb-4 object-contain" />
       <p class="text-slate-800 text-3xl font-bold tracking-tight animate-fade-in-down opacity-0">
         AtivaMente
       </p>

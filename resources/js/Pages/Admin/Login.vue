@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
-import { Brain, Lock, Mail } from 'lucide-vue-next';
+import { Lock, Mail } from 'lucide-vue-next';
 import * as z from 'zod';
 import AdminButton from '../../Components/admin/AdminButton.vue';
 import FormField from '../../Components/admin/FormField.vue';
 import { useZodForm } from '../../composables/useZodForm';
 import { ADMIN_ROUTES } from '../../services/routes';
+import logo from '../../../images/logo.svg';
 
 const loginSchema = z.object({
   email: z.string().email('E-mail inválido'),
@@ -42,9 +43,7 @@ const HIGHLIGHTS = [
       </div>
 
       <div class="relative flex items-center gap-3">
-        <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-          <Brain :size="20" class="text-white" />
-        </div>
+        <img :src="logo" alt="" class="w-11 h-11 object-contain" />
         <span class="text-xl font-bold text-white">AtivaMente</span>
       </div>
 

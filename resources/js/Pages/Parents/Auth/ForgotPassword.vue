@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import * as z from 'zod';
-import AuthLayout from '../../Layouts/AuthLayout.vue';
-import Input from '../../Components/ui/Input.vue';
-import PrimaryButton from '../../Components/ui/PrimaryButton.vue';
-import Toast from '../../Components/ui/Toast.vue';
-import { useToast } from '../../composables/useToast';
-import { useZodForm } from '../../composables/useZodForm';
-import { ROUTES } from '../../services/routes';
+import AuthLayout from '../../../Layouts/AuthLayout.vue';
+import Input from '../../../Components/ui/Input.vue';
+import PrimaryButton from '../../../Components/ui/PrimaryButton.vue';
+import Toast from '../../../Components/ui/Toast.vue';
+import { useToast } from '../../../composables/useToast';
+import { useZodForm } from '../../../composables/useZodForm';
+import { ROUTES } from '../../../services/routes';
 
 defineOptions({ layout: AuthLayout });
 
