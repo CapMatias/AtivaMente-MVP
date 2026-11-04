@@ -8,6 +8,7 @@ import { Input } from '../components/ui/Input';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import { AuthService } from '../services/api';
 import { useAuthStore } from '../store/authStore';
+import { Logo } from '../components/ui/Logo';
 import { hasSeenOnboarding } from '../services/onboarding';
 
 const loginSchema = z.object({
@@ -40,6 +41,7 @@ export default function LoginScreen() {
   return (
     <View className="flex-1 bg-white px-8 justify-center">
       <View className="mb-12">
+        <View className="mb-6"><Logo size={72} /></View>
         <Text className="text-slate-800 text-4xl font-bold mb-2">Bem-vindo!</Text>
         <Text className="text-slate-400 text-lg">Acesse sua conta para continuar</Text>
       </View>

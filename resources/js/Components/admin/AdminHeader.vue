@@ -3,6 +3,7 @@ import { Link } from '@inertiajs/vue3';
 import { Bell, Menu } from 'lucide-vue-next';
 import InitialsAvatar from './InitialsAvatar.vue';
 import { ADMIN_ROUTES } from '../../services/routes';
+import logo from '../../../images/logo.svg';
 import { ADMIN_USER } from '../../services/adminMockData';
 
 defineProps<{
@@ -23,6 +24,8 @@ const emit = defineEmits<{ (e: 'open-menu'): void }>();
     >
       <Menu :size="18" class="text-slate-600" />
     </button>
+    <!-- No celular a sidebar fica escondida; a logo mantém a marca visível. -->
+    <img :src="logo" alt="AtivaMente" class="lg:hidden w-8 h-8 object-contain flex-shrink-0" />
 
     <div class="flex-1 min-w-0">
       <h1 class="text-base font-bold text-slate-800 truncate">{{ title }}</h1>

@@ -8,6 +8,7 @@ import { Input } from '../components/ui/Input';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import { AuthService } from '../services/api';
 import { useAuthStore } from '../store/authStore';
+import { Logo } from '../components/ui/Logo';
 import { hasSeenOnboarding } from '../services/onboarding';
 
 const signupSchema = z.object({
@@ -45,6 +46,7 @@ export default function SignupScreen() {
   return (
     <View className="flex-1 bg-white px-8 py-12">
       <View className="mb-8">
+        <View className="mb-4"><Logo size={64} /></View>
         <Text className="text-slate-800 text-3xl font-bold mb-2">Crie sua conta</Text>
         <Text className="text-slate-400 text-lg">Junte-se ao AtivaMente</Text>
       </View>

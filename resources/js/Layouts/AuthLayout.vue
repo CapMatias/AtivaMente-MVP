@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logo from '../../images/logo.svg';
+
 withDefaults(defineProps<{ centered?: boolean }>(), { centered: true });
 </script>
 
@@ -9,6 +11,7 @@ withDefaults(defineProps<{ centered?: boolean }>(), { centered: true });
     :class="centered ? 'justify-center' : 'py-12'"
   >
     <div class="w-full max-w-md mx-auto">
+      <img :src="logo" alt="Logo do AtivaMente" class="w-16 h-16 object-contain mb-6" />
       <slot />
     </div>
   </div>

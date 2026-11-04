@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { COLORS } from '../../constants/theme';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   title: string;
@@ -20,6 +21,7 @@ export const Header = ({ title, showBack, onBack }: HeaderProps) => {
         )}
         <Text className="text-xl font-bold text-slate-800">{title}</Text>
       </View>
+      <Logo size={32} />
     </View>
   );
 };

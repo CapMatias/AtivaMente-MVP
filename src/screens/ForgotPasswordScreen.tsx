@@ -6,6 +6,7 @@ import * as z from 'zod';
 import { useRouter } from 'expo-router';
 import { Input } from '../components/ui/Input';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
+import { Logo } from '../components/ui/Logo';
 import { AuthService } from '../services/api';
 
 const recoverySchema = z.object({
@@ -31,6 +32,7 @@ export default function ForgotPasswordScreen() {
   return (
     <View className="flex-1 bg-white px-8 justify-center">
       <View className="mb-12">
+        <View className="mb-6"><Logo size={64} /></View>
         <Text className="text-slate-800 text-3xl font-bold mb-2">Recuperar Senha</Text>
         <Text className="text-slate-400 text-lg">Insira seu e-mail para redefinir sua senha</Text>
       </View>

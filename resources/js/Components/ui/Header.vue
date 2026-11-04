@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logo from '../../../images/logo.svg';
+
 withDefaults(
   defineProps<{
     title: string;
@@ -25,5 +27,6 @@ const emit = defineEmits<{ (e: 'back'): void }>();
       <h1 class="text-xl font-bold text-slate-800">{{ title }}</h1>
     </div>
     <slot name="actions" />
+    <img :src="logo" alt="Logo do AtivaMente" class="w-8 h-8 object-contain" />
   </header>
 </template>
