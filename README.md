@@ -154,8 +154,8 @@ do app dos responsáveis e a Figura 6, as 8 telas do painel da clínica.
 
 #### O caminho que o protótipo cobre
 
-**Responsável (Figura 5).** Abrir o app → passar pelo onboarding → entrar com
-e-mail e senha → chegar ao início e ver a próxima sessão do filho → abrir a
+**Responsável (Figura 5).** Abrir o app → entrar com e-mail e senha → no
+primeiro acesso, passar pelas boas-vindas → chegar ao início e ver a próxima sessão do filho → abrir a
 lista de filhos → entrar no perfil da criança → ler a última evolução escrita
 pelo terapeuta → conferir a agenda da semana → solicitar um novo agendamento →
 ver as notificações → editar o próprio perfil. Também estão montadas as telas
@@ -382,7 +382,11 @@ O Expo abre um menu no terminal com um QR Code:
 
 A forma mais rápida de ver o app rodando é pelo navegador com `npm run web`.
 
-O app abre na splash screen, segue para o onboarding e depois para o login.
+O app abre na splash screen e segue para o login. As telas de boas-vindas
+(onboarding) aparecem uma única vez por conta, logo depois do primeiro login ou
+cadastro; nos acessos seguintes o login leva direto ao início. A marca fica
+guardada no aparelho.
+
 **Qualquer e-mail válido e qualquer senha com 6 ou mais caracteres entram** — a
 autenticação é simulada.
 

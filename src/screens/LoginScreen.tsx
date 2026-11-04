@@ -8,6 +8,7 @@ import { Input } from '../components/ui/Input';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import { AuthService } from '../services/api';
 import { useAuthStore } from '../store/authStore';
+import { hasSeenOnboarding } from '../services/onboarding';
 
 const loginSchema = z.object({
   email: z.string().email('Email inválido'),
@@ -29,7 +30,8 @@ export default function LoginScreen() {
       const user = await AuthService.login(data.email, data.password);
       setUser(user);
       setAuthenticated(true);
-      router.replace('/home');
+      // Primeiro login desta conta: passa pelas boas-vindas antes do app.
+      router.replace((await hasSeenOnboarding(user.email)) ? '/home' : '/onboarding');
     } catch (e) {
       alert('Erro ao fazer login');
     }

@@ -8,6 +8,7 @@ import { Input } from '../components/ui/Input';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import { AuthService } from '../services/api';
 import { useAuthStore } from '../store/authStore';
+import { hasSeenOnboarding } from '../services/onboarding';
 
 const signupSchema = z.object({
   name: z.string().min(3, 'Nome muito curto'),
@@ -35,7 +36,7 @@ export default function SignupScreen() {
       const user = await AuthService.register(data);
       setUser(user);
       setAuthenticated(true);
-      router.replace('/home');
+      router.replace((await hasSeenOnboarding(user.email)) ? '/home' : '/onboarding');
     } catch (e) {
       alert('Erro ao criar conta');
     }

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
+import { useAuthStore } from '../store/authStore';
+import { markOnboardingSeen } from '../services/onboarding';
 
 const ONBOARDING_STEPS = [
   {
@@ -24,12 +26,14 @@ const ONBOARDING_STEPS = [
 export default function OnboardingScreen() {
   const [currentStep, setCurrentStep] = useState(0);
   const router = useRouter();
+  const { state } = useAuthStore();
 
-  const nextStep = () => {
+  const nextStep = async () => {
     if (currentStep < ONBOARDING_STEPS.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      router.replace('/login');
+      await markOnboardingSeen(state.user?.email);
+      router.replace('/home');
     }
   };
 
