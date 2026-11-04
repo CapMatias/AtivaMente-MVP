@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, useId, useSlots } from 'vue';
+import { computed, ref, useId, useSlots } from 'vue';
+import { Eye, EyeOff } from 'lucide-vue-next';
 
 /**
  * Equivalente ao `Field` do protótipo — input, textarea ou select com o mesmo
  * tratamento visual, rótulo opcional e slot de ícone à esquerda.
  */
-withDefaults(
+const props = withDefaults(
   defineProps<{
     label?: string;
     placeholder?: string;
@@ -26,7 +27,12 @@ const slots = useSlots();
 const BASE =
   'w-full bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400/40 focus:border-blue-400 transition-all';
 
-const padding = computed(() => (slots.icon ? 'pl-9 pr-3' : 'px-3'));
+// Campos de senha ganham o botão de mostrar/ocultar; os demais ficam como estavam.
+const isPassword = computed(() => props.as === 'input' && props.type === 'password');
+const visible = ref(false);
+const inputType = computed(() => (isPassword.value && visible.value ? 'text' : props.type));
+
+const padding = computed(() => `${slots.icon ? 'pl-9' : 'pl-3'} ${isPassword.value ? 'pr-10' : 'pr-3'}`);
 </script>
 
 <template>
@@ -63,11 +69,22 @@ const padding = computed(() => (slots.icon ? 'pl-9 pr-3' : 'px-3'));
         v-else
         :id="id"
         v-model="model"
-        :type="type"
+        :type="inputType"
         :placeholder="placeholder"
         :aria-invalid="Boolean(error)"
         :class="[BASE, padding, 'py-2.5']"
       />
+      <button
+        v-if="isPassword"
+        type="button"
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+        :aria-label="visible ? 'Ocultar senha' : 'Mostrar senha'"
+        :aria-pressed="visible"
+        @click="visible = !visible"
+      >
+        <EyeOff v-if="visible" :size="15" />
+        <Eye v-else :size="15" />
+      </button>
     </div>
 
     <p v-if="error" class="text-xs text-red-500">{{ error }}</p>
