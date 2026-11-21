@@ -12,8 +12,8 @@ import { Logo } from '../components/ui/Logo';
 import { hasSeenOnboarding } from '../services/onboarding';
 
 const loginSchema = z.object({
-  email: z.string().email('Email inválido'),
-  password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres'),
+  email: z.string({ required_error: 'Campo obrigatório' }).email('Email inválido'),
+  password: z.string({ required_error: 'Campo obrigatório' }).min(6, 'A senha deve ter no mínimo 6 caracteres'),
 });
 
 type LoginFormData = z.infer<typeof loginSchema>;

@@ -12,11 +12,11 @@ import { Logo } from '../components/ui/Logo';
 import { hasSeenOnboarding } from '../services/onboarding';
 
 const signupSchema = z.object({
-  name: z.string().min(3, 'Nome muito curto'),
-  email: z.string().email('Email inválido'),
-  phone: z.string().min(9, 'Telefone inválido'),
-  password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres'),
-  confirmPassword: z.string(),
+  name: z.string({ required_error: 'Campo obrigatório' }).min(3, 'Nome muito curto'),
+  email: z.string({ required_error: 'Campo obrigatório' }).email('Email inválido'),
+  phone: z.string({ required_error: 'Campo obrigatório' }).min(9, 'Telefone inválido'),
+  password: z.string({ required_error: 'Campo obrigatório' }).min(6, 'A senha deve ter no mínimo 6 caracteres'),
+  confirmPassword: z.string({ required_error: 'Campo obrigatório' }),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "As senhas não coincidem",
   path: ["confirmPassword"],

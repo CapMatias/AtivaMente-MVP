@@ -10,7 +10,7 @@ import { Logo } from '../components/ui/Logo';
 import { AuthService } from '../services/api';
 
 const recoverySchema = z.object({
-  email: z.string().email('Email inválido'),
+  email: z.string({ required_error: 'Campo obrigatório' }).email('Email inválido'),
 });
 
 type RecoveryFormData = z.infer<typeof recoverySchema>;
