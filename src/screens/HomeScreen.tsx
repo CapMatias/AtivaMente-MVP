@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { formatDate } from '../utils/formatDate';
 import { useRouter } from 'expo-router';
 import { Card } from '../components/ui/Card';
 import { Avatar } from '../components/ui/Avatar';
@@ -34,7 +35,7 @@ export default function HomeScreen() {
               <Text className="text-slate-800 text-xl font-bold">{MOCK_DATA.children[0].name}</Text>
               <Text className="text-slate-500">{MOCK_DATA.children[0].nextSession?.type}</Text>
               <Text className="text-blue-600 font-medium mt-2">
-                {MOCK_DATA.children[0].nextSession?.date} às {MOCK_DATA.children[0].nextSession?.time}
+                {formatDate(MOCK_DATA.children[0].nextSession?.date)} às {MOCK_DATA.children[0].nextSession?.time}
               </Text>
             </View>
             <Avatar src={MOCK_DATA.children[0].avatarUrl!} size="sm" />
@@ -71,7 +72,7 @@ export default function HomeScreen() {
             <Card className="mb-6 animate-fade-in-up opacity-0" style={{ animationDelay: '0.65s' }}>
               <View className="flex-row justify-between mb-2">
                 <Text className="text-slate-800 font-bold">{lastEvolution.professionalName}</Text>
-                <Badge label={lastEvolution.date} color="blue" />
+                <Badge label={formatDate(lastEvolution.date)} color="blue" />
               </View>
               <Text className="text-slate-600 leading-5" numberOfLines={3}>{lastEvolution.description}</Text>
             </Card>

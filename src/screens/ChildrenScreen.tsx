@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { formatDate } from '../utils/formatDate';
 import { Header } from '../components/ui/Header';
 import { Card } from '../components/ui/Card';
 import { Avatar } from '../components/ui/Avatar';
@@ -28,7 +29,7 @@ export default function ChildrenScreen() {
                 <Text className="text-slate-500">{child.age} anos • {child.diagnosis}</Text>
                 <View className="mt-2 py-1 px-2 bg-blue-100 rounded-lg self-start">
                   <Text className="text-blue-600 text-xs font-bold">
-                    Próxima: {child.nextSession?.date}
+                    Próxima: {formatDate(child.nextSession?.date)}
                   </Text>
                 </View>
               </View>

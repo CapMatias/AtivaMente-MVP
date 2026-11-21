@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { formatDate } from '../utils/formatDate';
 import { Header } from '../components/ui/Header';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -85,7 +86,7 @@ export default function AgendaScreen() {
                     />
                   </View>
                   <Text className="text-slate-500">{session.professionalName}</Text>
-                  <Text className="text-blue-600 font-medium mt-1">{session.date} • {session.time}</Text>
+                  <Text className="text-blue-600 font-medium mt-1">{formatDate(session.date)} • {session.time}</Text>
                 </View>
                 {session.status === 'scheduled' && (
                   <TouchableOpacity className="p-2 bg-red-50 rounded-full">

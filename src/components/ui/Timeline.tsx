@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import { formatDate } from '../../utils/formatDate';
 import { COLORS } from '../../constants/theme';
 
 interface TimelineItem {
@@ -30,7 +31,7 @@ export const Timeline = ({ items }: TimelineProps) => {
           <View className="flex-1 bg-white rounded-2xl p-4 shadow-sm" style={{ shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.05, shadowRadius: 8, elevation: 2 }}>
             <View className="flex-row justify-between mb-2">
               <Text className="text-slate-800 font-bold">{item.title}</Text>
-              <Text className="text-slate-400 text-xs">{item.date}</Text>
+              <Text className="text-slate-400 text-xs">{formatDate(item.date)}</Text>
             </View>
             <Text className="text-slate-600 leading-5 mb-3">{item.description}</Text>
 

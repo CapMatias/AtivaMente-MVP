@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { formatDate } from '../utils/formatDate';
 import { Header } from '../components/ui/Header';
 import { Card } from '../components/ui/Card';
 import { Avatar } from '../components/ui/Avatar';
@@ -28,7 +29,7 @@ export default function ChildProfileScreen() {
         <Card className="mb-6">
           <View className="space-y-3">
             <DetailItem label="Responsável" value={MOCK_DATA.user.name} />
-            <DetailItem label="Próxima Terapia" value={`${child.nextSession?.type} - ${child.nextSession?.date}`} />
+            <DetailItem label="Próxima Terapia" value={`${child.nextSession?.type} - ${formatDate(child.nextSession?.date)}`} />
           </View>
         </Card>
 
@@ -43,7 +44,7 @@ export default function ChildProfileScreen() {
           <Card key={evo.id} className="mb-4">
             <View className="flex-row justify-between mb-2">
               <Text className="text-slate-800 font-bold">{evo.professionalName}</Text>
-              <Text className="text-slate-400 text-xs">{evo.date}</Text>
+              <Text className="text-slate-400 text-xs">{formatDate(evo.date)}</Text>
             </View>
             <Text className="text-slate-600 leading-5">{evo.description}</Text>
           </Card>
