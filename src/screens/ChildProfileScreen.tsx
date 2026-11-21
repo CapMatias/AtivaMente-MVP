@@ -15,7 +15,7 @@ export default function ChildProfileScreen() {
 
   return (
     <View className="flex-1 bg-slate-50">
-      <Header title="Perfil da Criança" showBack onPress={() => router.back()} />
+      <Header title="Perfil da Criança" showBack onBack={() => router.back()} />
       
       <ScrollView className="flex-1 px-6 py-4">
         <View className="items-center mb-8">
