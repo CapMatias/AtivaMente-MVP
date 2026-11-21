@@ -44,3 +44,6 @@ yarn-error.*
 .claude/
 .claude-flow/
 
+
+# IDE (Android Studio / IntelliJ)
+.idea/
