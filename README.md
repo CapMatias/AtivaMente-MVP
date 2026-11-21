@@ -401,6 +401,13 @@ Laravel.
 O arquivo [VUE-INERTIA.md](VUE-INERTIA.md) explica o porte em detalhe, e
 `routes/web.php` traz as rotas de exemplo do lado do servidor.
 
+**Versão mantida.** O código em `resources/` é o retrato usado neste relatório
+(Figura 6) e não recebe mais atualizações. O painel e o acesso web dos pais
+continuam no monorepo da equipe,
+[AtivaMente-BR/AtivaMente](https://github.com/AtivaMente-BR/AtivaMente), na
+pasta `Projeto ERP/` (`Pages/Admin/` e `Pages/Guardian/`), que já roda dentro
+do Laravel. Correções no painel devem ir para lá.
+
 ---
 
 ## Stack

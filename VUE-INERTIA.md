@@ -1,5 +1,10 @@
 # AtivaMente — frontend Vue 3 + Inertia.js
 
+> **Arquivado.** Este porte é o retrato usado no relatório e não recebe mais
+> atualizações. A versão mantida está no monorepo da equipe,
+> [AtivaMente-BR/AtivaMente](https://github.com/AtivaMente-BR/AtivaMente), em
+> `Projeto ERP/` (`Pages/Admin/` e `Pages/Guardian/`).
+
 Dois frontends convivem neste repositório: o **app dos pais** (porte do Expo/React
 Native) e o **painel administrativo** (porte do protótipo Figma Make
 "AtivaMente SaaS"). Ambos compartilham build, tokens e composables.
